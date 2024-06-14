@@ -31,6 +31,8 @@ import { deleteTopicsRequest } from '../../../action/Course/Topic/DeleteTopicsAc
 //import DialogContentText from '@mui/material/DialogContentText';
 import { fetchContentUrlSuccess } from '../../../action/Course/Material/FetchContentUrlAction';
 import { useParams, useNavigate, Link } from 'react-router-dom';
+import { MdOutlineQuiz } from "react-icons/md";    // quiz icon
+import { IconButton } from '@mui/material'; // icon button
 //----------------------------------------------------------------------------------------------DELETE----------
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
@@ -280,6 +282,7 @@ export default function SavedTopics(props) {
                         ><div style={{ display: 'flex', justifyContent: 'space-between', width: '100%' }}>
                                 <span>  {topic.topicName}</span>
                                 <div>
+                                           <IconButton aria-label="delete" disabled color="primary"> <MdOutlineQuiz /></IconButton> // modified lines code for quiz team
                                     <EditIcon style={{ marginRight: 16 }} variant="outlined" onClick={() => handleEditClickOpen(topic.topicId)} />
                                     <DeleteIcon onClick={() => handleDeleteClickOpen(topic.topicId)} /></div></div>
                             {/* <DeleteIcon onClick={() => handleDelete(topic.topicId)} /></div></div> */}
